@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% if context %}
+    <p>Hello {{ context.name }}! {{ context.message }}!</p>
+
+  {% else %}
+    <div>
+        <a href="/?name=Rekruto&message=Давай дружить!">
+       Ссылка на базовое тестовое задание
+      </a>
+    </div>
+
+    <div>
+      <a href="/extended">
+       Cсылка на дополненную страницу
+      </a>
+    </div>
+  {% endif %}
+
+{% endblock %}

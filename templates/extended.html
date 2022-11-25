@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="intro">
+        <div class="container">
+            <!--навигационная панель, хоть она и не нужна в проекте-->
+            {% include "snippets/nav.html" %}
+                <div class="animated">
+                    <div class="intro__image__container">
+                        <img class="intro__image__container" src="{{ url_for('static', filename='img/img1.jpg') }}" alt=""/>
+                        <span class="intro__head">
+                            <h3>
+                                {{ context.message }}
+                            </h3>
+                        </span>
+                        <span class="intro__text">
+                            <p>
+                                Так как общая идея задания заключается в привествии, то
+                                я решил расширить его в виде дружелюбной странички с
+                                моими фотографиями (чтобы рассмотреть фон, наведите курсор на этот текст).
+                                Воспользовавшись формой ниже, вы можете изменить заголовок внутри этой
+                                карточки. Обратите внимание, что URL адрес в таком случае останется прежним.
+                                Так как задание заключалось в создании сервиса, исполняющего GET-запрос,
+                                я решил добавить в него ещё один популярный вид запросов - POST.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="former">
+                        <form action="/extended" method="post">
+                            <div class="form__message">
+                                <textarea name="email_message" class="text__message" id="message" cols="90" placeholder="Message"></textarea>
+
+                                <button class="button__message" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
